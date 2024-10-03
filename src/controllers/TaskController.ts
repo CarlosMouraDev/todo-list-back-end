@@ -22,7 +22,7 @@ export class TaskController {
   //GET /api/tasks
   index = (req: Request, res: Response) => {
     const tasks = Task.findAll();
-    return res.json(tasks);
+    res.json(tasks);
   };
   //POST /api/tasks
   store = (req: Request, res: Response) => {
@@ -36,7 +36,7 @@ export class TaskController {
     const { id } = req.params;
     const task = Task.findById(+id)
     if (!task) throw new HttpError(404, "task not found")
-      res.json(task)
+    res.json(task)
   };
   // PUT /api/tasks/:id
   update = (req: Request, res: Response) => {

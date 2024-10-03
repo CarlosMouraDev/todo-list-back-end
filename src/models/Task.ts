@@ -10,7 +10,7 @@ type TaskAttributes = {
 
 //mudar com o banco de dados
 export class Task {
-  private static tasks: Task[];
+  private static tasks: Task[] = [];
   private static sequence: number = 1;
 
   id: number;
@@ -83,5 +83,3 @@ export class Task {
     return this.tasks.splice(index, 1)[0];
   }
 }
-
-Task.findAll();
